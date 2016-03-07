@@ -1,0 +1,20 @@
+#4)Programa que pida por teclado sobre que nivel de estudio queremos saber el numero
+#de mujeres y hombres por nucleo
+
+# -*- coding: utf-8 -*-
+
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+import json
+from pprint import pprint
+
+fichero=open("/home/alvarocamargo/Descargas/estudio.json","r")
+lineas=json.load(fichero)
+
+cadena=raw_input("Introduce un nivel de estudio que queremos saber:")
+
+for b in lineas:
+	if b["DESCRIPCION_ESTUDIO"]==cadena:
+		print b["DESCRIPCION_NUCLEO"], "CON CODIGO ESTABLECIDO", b["CODIGO_EST"], "TIENE", b["HOMBRES"], "HOMBRES", cadena
+		print b["DESCRIPCION_NUCLEO"], "CON CODIGO ESTABLECIDO", b["CODIGO_EST"], "TIENE", b["MUJERES"], "MUJERES", cadena

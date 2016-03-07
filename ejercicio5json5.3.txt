@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+#5)Programa que pida por teclado el código-est de un distrito , muestre el nivel de estudio al que se refiere  y el número de persona total que tiene ese estudio. 
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+import json
+from pprint import pprint
+
+fichero=open("/home/alvarocamargo/Descargas/estudio.json","r")
+lineas=json.load(fichero)
+cadena=raw_input("Introduce un código-est de un distrito:")
+for z in lineas:
+	if z["CODIGO_EST"]==cadena:
+		lista.append(z)
+suma=0
+for x in lista:

@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+import json
+from pprint import pprint
+
+fichero=open("/home/alvarocamargo/Descargas/estudio.json","r")
+lineas=json.load(fichero)
+
+for t in lineas:
+	if t["DESCRIPCION_ESTUDIO"]== "NO SABE LEER NI ESCRIBIR":
+		

@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+#1)programa que liste todos los nucleos donde se ha realizado la encuesta.
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+import json
+from pprint import pprint
+
+fichero=open("/home/alvarocamargo/Descargas/estudio.json","r")
+lineas=json.load(fichero)
+
+for x in lineas:
+	
+	print ""
+	print x["DESCRIPCION_NUCLEO"]

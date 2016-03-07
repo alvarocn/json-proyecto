@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+#2)Programa que muestre el número de hombres y mujeres que no saben ni leer ni escribir.
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+import json
+from pprint import pprint
+
+fichero=open("/home/alvarocamargo/Descargas/estudio.json","r")
+lineas=json.load(fichero)
+
+for t in lineas:
+	if t["DESCRIPCION_ESTUDIO"]== "NO SABE LEER NI ESCRIBIR":
+		print "NUMERO DE HOMBRES:", t["HOMBRES"], "NO SABE NI LEER NI ESCRIBIR", "EN", t["DESCRIPCION_NUCLEO"], "EN EL SECTOR", "CON CODIGO ESTABLECIDO", t["CODIGO_EST"]
+		print "NUMERO DE MUJERES:", t["MUJERES"], "NO SABE NI LEER NI ESCRIBIR", "EN", t["DESCRIPCION_NUCLEO"], "EN EL SECTOR", "CON CODIGO ESTABLECIDO", t["CODIGO_EST"]

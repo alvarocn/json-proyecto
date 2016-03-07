@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+import json
+from pprint import pprint
+
+fichero=open("/home/alvarocamargo/Descargas/estudio.json","r")
+lineas=json.load(fichero)
+
+
+
+
+cadena=raw_input("Introduce una subcadena:")
+for w in lineas:
+	if w.get("DESCRIPCION_NUCLEO", 0):
+		if w["DESCRIPCION_NUCLEO"].startswith(cadena):
+			b=(w["HOMBRES"])
+			a=(w["MUJERES"])
+			def suma(a, b):
+				c=a+b
+				return c
